@@ -1,24 +1,21 @@
 package com.tbcmad.todoapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.tbcmad.todoapp.model.ETodo;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
-import java.util.Date;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -71,6 +68,35 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
+            case R.id.mnu_exit:
+                final AlertDialog dialog = new AlertDialog.Builder(this)
+                        .setTitle(getString(R.string.app_name))
+                        .setMessage(getString(R.string.alert_dialog_message_exit))
+                        .setPositiveButton("No", null)
+                        .setNegativeButton("Yes", null)
+                        .show();
+
+                Button positiveButtom = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                positiveButtom.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                Button negativeButtom = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+                negativeButtom.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                        System.exit(0);
+
+                    }
+                });
+                break;
+
+
+
         }
         return super.onOptionsItemSelected(item);
     }

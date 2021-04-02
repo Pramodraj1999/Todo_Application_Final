@@ -5,17 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="25dp"
-    android:layout_marginTop="50dp"
     android:layout_marginRight="25dp"
+    android:background="@drawable/background_edit_todo"
     android:orientation="vertical"
-    tools:context=".EditTodoFragment"
-    android:background="@drawable/background_edit_todo">
+    tools:context=".EditTodoFragment">
 
     <EditText
         android:id="@+id/edit_fragment_txt_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="5dp"
         android:ems="10"
         android:hint="@string/edit_title"
         android:inputType="textPersonName" />
@@ -23,8 +22,8 @@
     <EditText
         android:id="@+id/edit_fragment_txt_description"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
         android:height="150dp"
         android:ems="10"
         android:hint="@string/edit_description"
@@ -37,7 +36,7 @@
         android:id="@+id/edit_fragment_txt_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="5dp"
         android:ems="10"
         android:hint="@string/edit_date"
         android:inputType="textPersonName" />
@@ -45,8 +44,8 @@
     <RadioGroup
         android:id="@+id/edit_fragment_rg_priority"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <RadioButton
@@ -78,8 +77,7 @@
         android:id="@+id/edit_fragment_chk_complete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:text="@string/is_complete" />
+        android:text="CheckBox" />
 
     <LinearLayout
         android:layout_width="match_parent"

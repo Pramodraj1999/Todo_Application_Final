@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context=".ListTodoFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_item_todo_rv_list_todo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="389dp" />
 </FrameLayout>

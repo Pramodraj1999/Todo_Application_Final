@@ -5,11 +5,6 @@ import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,9 +13,11 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.tbcmad.todoapp.model.ETodo;
 import com.tbcmad.todoapp.viewModel.TodoViewModel;
@@ -73,6 +70,28 @@ public class    EditTodoFragment extends Fragment {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(txtTitle.getText().length()==0) {
+                    txtTitle.requestFocus();
+                    txtTitle.setError("Type your title");
+                    return;
+                }
+                if(txtDescription.getText().length()==0) {
+                    txtDescription.requestFocus();
+                    txtDescription.setError("Type your description");
+                    return;
+                }
+                if (txtDate.getText().length() == -1)
+                {
+                    Toast.makeText(getActivity(), "Please Select Date ",Toast.LENGTH_SHORT).show();
+
+                    return;
+                }
+                if (rgPriority.getCheckedRadioButtonId() == -1)
+                {
+                    Toast.makeText(getActivity(), "Please Select Priority ",Toast.LENGTH_SHORT).show();
+
+                    return;
+                }
                 SaveTodo();
             }
         });
@@ -128,7 +147,7 @@ public class    EditTodoFragment extends Fragment {
 
 
         Toast.makeText(getActivity(), "Todo Saved",Toast.LENGTH_SHORT).show();
-        Intent intent= new Intent(getActivity(),MainActivity.class);
+        Intent intent= new Intent(getActivity(), MainActivity.class);
         startActivity(intent);
     }
 

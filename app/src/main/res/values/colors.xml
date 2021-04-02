@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bgColorFab">#F44336</color>
     <color name="color_high">#F12213</color>
-    <color name="color_medium">#FFEB3B</color>
-    <color name="color_low">#4CAF50</color>
+    <color name="color_medium">#00BCD4</color>
+    <color name="color_low">#001CBA</color>
 
 </resources>

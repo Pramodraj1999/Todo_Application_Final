@@ -3,15 +3,26 @@
     <string name="edit_title">Title</string>
     <string name="edit_description">Description</string>
     <string name="edit_date">Date</string>
+    <string name="edit_status">Status</string>
     <string name="edit_priority">Priority</string>
     <string name="edit_high">High</string>
     <string name="edit_medium">Medium</string>
     <string name="edit_low">Low</string>
     <string name="edit_save">Save</string>
+    <string name="is_complete">Is Complete</string>
+    <string name="splash_name">✔✔Todo Application✔✔</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="alert_cancel">Do you want to return to main screen?</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
-    <string name="welcome">Welcome to Todo App</string>
+    <string name="welcome">Welcome</string>
+    <string name="to">To</string>
+    <string name="login">Login</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name='alert_dialog_message'>Do you want to cancel this operation?</string>
+    <string name='alert_dialog_message_cancel'>Are You Sure, Want To Cancel ?</string>
+    <string name='alert_dialog_message_exit'>You Want To Exit ?</string>
+
 </resources>

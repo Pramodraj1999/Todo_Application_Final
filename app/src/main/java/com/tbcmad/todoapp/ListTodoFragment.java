@@ -1,24 +1,21 @@
 package com.tbcmad.todoapp;
 
 import android.content.Intent;
-import android.icu.util.EthiopicCalendar;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.ItemTouchHelper;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.tbcmad.todoapp.model.ETodo;
 import com.tbcmad.todoapp.viewModel.TodoViewModel;
@@ -75,11 +72,15 @@ public class ListTodoFragment extends Fragment {
     }
 
     private class TodoHolder extends RecyclerView.ViewHolder{
-        TextView title, date;
+        TextView title, date, description, status;
         public TodoHolder(LayoutInflater inflater, ViewGroup parent){
             super(inflater.inflate(R.layout.list_item_todo, parent, false));
             title = itemView.findViewById(R.id.list_item_tv_title);
             date = itemView.findViewById(R.id.list_item_tv_date);
+            description = itemView.findViewById(R.id.list_item_tv_description);
+
+
+
 
             title.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -93,6 +94,22 @@ public class ListTodoFragment extends Fragment {
                     loadUpdateItem();
                 }
             });
+            description.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    loadUpdateItem();
+                }
+            });
+            /*status.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    loadUpdateItem();
+                }
+            });*/
+
+
+
+
         }
 
         void loadUpdateItem(){
@@ -107,7 +124,10 @@ public class ListTodoFragment extends Fragment {
         public void bind(ETodo todo){
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             title.setText(todo.getTitle());
+            description.setText(todo.getDescription());
             date.setText(sdf.format(todo.getTodoDate()));
+
+
         }
     }
 
